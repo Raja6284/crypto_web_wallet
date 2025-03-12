@@ -51,17 +51,19 @@ export default function EthWallet({ mnemonic }) {
 
             const balanceInEth = parseFloat(balance.toString()) / 1e18
 
-            setWallets((wallets)=>[...wallets, {
+            setWallets( wallets =>[...wallets, {
                 publicKey: publicKey,
                 privateKey: privateKey,
                 balance: balanceInEth,
                 index: currentIndex
             }])
-    
-            setCurrentIndex(currentIndex + 1);
+            
+            //console.log(wallets)
+
+            setCurrentIndex(c => c + 1);
             //setAddresses([...addresses, wallet.address]);
         }catch(err){
-            console.log("error while creating wallet : " + err)
+            console.log("error while creating ethereum wallet : " + err)
         }
     }
 
@@ -77,7 +79,7 @@ export default function EthWallet({ mnemonic }) {
             </button>
 
             <div className="mt-2 ">
-                {wallets.map((p) => <div key={p}>{p.publicKey} and {p.balance}</div>)}
+                {wallets.map((p) => <div key={p.publicKey}>{p.publicKey} and {p.balance}</div>)}
             </div>
         </div>
     )
