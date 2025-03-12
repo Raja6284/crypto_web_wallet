@@ -29,7 +29,7 @@ export default function EthWallet({mnemonic}){
             </button>
 
             <div className="mt-2 ">
-                {addresses.map((p)=><div>{p}</div>)}
+                {addresses.map((p)=><div key={p}>{p}</div>)}
             </div>
         </div>
     )
