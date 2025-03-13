@@ -1,2 +1,173 @@
 @import "tailwindcss";
 
+:root {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* Light theme variables */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f3f4f6;
+  --bg-tertiary: #f9fafb;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --text-tertiary: #6b7280;
+  --border-color: #e5e7eb;
+  --blue-color: #3b82f6;
+  --blue-hover: #2563eb;
+  --purple-color: #8b5cf6;
+  --purple-hover: #7c3aed;
+  --green-color: #10b981;
+  --green-hover: #059669;
+  --red-color: #ef4444;
+  --red-hover: #dc2626;
+  --amber-color: #f59e0b;
+  --amber-hover: #d97706;
+  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+body.dark-theme {
+  /* Dark theme variables */
+  --bg-primary: #111827;
+  --bg-secondary: #1f2937;
+  --bg-tertiary: #374151;
+  --text-primary: #f9fafb;
+  --text-secondary: #e5e7eb;
+  --text-tertiary: #d1d5db;
+  --border-color: #374151;
+  --blue-color: #3b82f6;
+  --blue-hover: #60a5fa;
+  --purple-color: #8b5cf6;
+  --purple-hover: #a78bfa;
+  --green-color: #10b981;
+  --green-hover: #34d399;
+  --red-color: #ef4444;
+  --red-hover: #f87171;
+  --amber-color: #f59e0b;
+  --amber-hover: #fbbf24;
+  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.4);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-tertiary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Custom utility classes */
+.bg-primary {
+  background-color: var(--bg-primary);
+}
+
+.bg-secondary {
+  background-color: var(--bg-secondary);
+}
+
+.bg-tertiary {
+  background-color: var(--bg-tertiary);
+}
+
+.text-primary {
+  color: var(--text-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-tertiary {
+  color: var(--text-tertiary);
+}
+
+.border-theme {
+  border-color: var(--border-color);
+}
+
+.btn-blue {
+  background-color: var(--blue-color);
+  color: white;
+}
+
+.btn-blue:hover:not(:disabled) {
+  background-color: var(--blue-hover);
+}
+
+.btn-purple {
+  background-color: var(--purple-color);
+  color: white;
+}
+
+.btn-purple:hover:not(:disabled) {
+  background-color: var(--purple-hover);
+}
+
+.btn-green {
+  background-color: var(--green-color);
+  color: white;
+}
+
+.btn-green:hover:not(:disabled) {
+  background-color: var(--green-hover);
+}
+
+.btn-red {
+  background-color: var(--red-color);
+  color: white;
+}
+
+.btn-red:hover:not(:disabled) {
+  background-color: var(--red-hover);
+}
+
+.btn-amber {
+  background-color: var(--amber-color);
+  color: white;
+}
+
+.btn-amber:hover:not(:disabled) {
+  background-color: var(--amber-hover);
+}
+
+.card {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  box-shadow: var(--card-shadow);
+  transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.card-header {
+  border-bottom: 1px solid var(--border-color);
+  transition: border-color 0.3s;
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
